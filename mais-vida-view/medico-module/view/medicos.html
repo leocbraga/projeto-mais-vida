@@ -1,0 +1,42 @@
+<div>
+	<divclass="row">
+		<button ng-click="logout()" class="btn btn-danger" ng-if="isLogado()"> Sair </button>
+	</div>
+	
+	<div class="row">
+		<a href="#/medicos/adicionar" class="btn btn-primary pull-right"> Novo Médico</a>
+	</div>
+
+	<div class="container">
+		 <table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Primeiro Nome</th>
+				<th>Último Nome</th>
+				<th>Email</th>
+				<th>Ativo</th>
+				<th>Ocupado</th>
+				<th>Ações</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="medico in medicos">
+					<td>{{medico.nome}}</td>
+					<td>{{medico.ultimoNome}}</td>
+					<td>{{medico.email}}</td>
+					<td> 
+						<input type="checkbox" ng-checked="medico.ativo == 1" readonly="true"/> 
+					</td>
+					<td>
+						<input type="checkbox" ng-checked="medico.status == 'OCUPADO'" readonly="true" />
+					</td>
+					<td>
+						<a class="btn btn-default" ng-href="#/medico/{{medico.id}}"> Detalhar </a>
+
+						<a class="btn btn-default" ng-href="#/medicos/{{medico.id}}/atualizar"> Atualizar </a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

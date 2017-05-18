@@ -1,0 +1,59 @@
+<form ng-submit="salvar(medico)">
+	<div class="row">
+		Nome: <br />
+		<input type="text" name="nome" ng-model="medico.nome" />
+	</div>
+	<br />
+
+	<div class="row">
+		Último Nome:
+		<br /> 
+		<input type="text" name="ultimoNome" ng-model="medico.ultimoNome" />
+	</div>
+	<br />
+	
+	<div class="row">
+		Email: 
+		<br />
+		<input type="email" name="email" ng-model="medico.email" />
+	</div>
+	<br />
+	
+	<div class="row">
+		Especialidade: 
+		<br />
+		<select name="especialidade" ng-model="medico.especialidade" ng-options="especialidade for especialidade in especialidades"/>
+	</div>
+	<br />
+
+	<div class="row">
+		Estado: <br />
+		<select name="estado" ng-model="medico.estado" ng-options="estado for estado in estados"/>
+	</div>
+	<br />
+
+	<div class="row">
+		Status: <br />
+		<select name="status" ng-model="medico.status" ng-options="statu for statu in status"/>
+	</div>
+	<br />
+
+	<div class="row">
+		Ativo: <br />
+		<input type="checkbox" name="ativo" ng-model="medico.ativo" ng-checked="medico.ativo"/>
+	</div>
+	<br />
+
+	<div class="row">
+		Cidade: <br /> 
+		<input type="text" name="cidade" ng-model="medico.cidade" />
+	</div>
+	<br />
+	<div class="row">
+		<input type="submit" class="btn btn-primary" value="Salvar" />
+	</div>
+
+	<br />
+
+	<a class="btn btn-default" ng-href="#/medicos"> Voltar </a>
+</form>
